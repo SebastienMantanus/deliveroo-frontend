@@ -3,6 +3,7 @@ import logo from "./assets/images/logo-teal.svg";
 import Header from "./components/Header";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Restaurant from "./components/Restaurant";
 
 function App() {
   const [data, setData] = useState(null);
@@ -17,7 +18,7 @@ function App() {
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.log(data.error);
+        console.log(error.response);
       }
     };
     fetchData();
@@ -28,15 +29,20 @@ function App() {
 
   return (
     <div className="App">
-      {{ isLoading } ? (
+      {isLoading ? (
         <p>Chargement en cours...</p>
       ) : (
         <div>
           <header>
             <Header image={logo} />
           </header>
-          <main>
-            <section></section>
+          <main className="main">
+            <Restaurant
+              image={data.restaurant.picture}
+              name={data.restaurant.name}
+              description={data.restaurant.description}
+            />
+
             <section></section>
           </main>
         </div>

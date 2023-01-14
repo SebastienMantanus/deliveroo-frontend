@@ -1,0 +1,13 @@
+const Restaurant = ({ image, name, description }) => {
+  return (
+    <section className="restaurant">
+      <div>
+        <h1>{name}</h1>
+        <p>{description}</p>
+      </div>
+      <img src={image} alt="Restaurant Image"></img>
+    </section>
+  );
+};
+
+export default Restaurant;
