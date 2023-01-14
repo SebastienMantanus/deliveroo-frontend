@@ -13,6 +13,7 @@ h1 {
 header {
   border-bottom: 1px lightgray solid;
   display: flex;
+  /* justify-content: center; */
 }
 
 header > div {
@@ -53,4 +54,24 @@ header img {
 .restaurant img {
   height: 200px;
   border-radius: 5px;
+}
+
+/* MENU */
+
+.menu {
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+}
+
+.menuSections {
+  width: 1200px;
+  gap: 50px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.panier {
+  width: 350px;
 }

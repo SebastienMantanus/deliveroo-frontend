@@ -1,9 +1,11 @@
 import "./App.css";
 import logo from "./assets/images/logo-teal.svg";
+import panier from "./assets/images/panier.png";
 import Header from "./components/Header";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Restaurant from "./components/Restaurant";
+import Menu from "./components/Menu";
 
 function App() {
   const [data, setData] = useState(null);
@@ -24,8 +26,8 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(data);
-  console.log(isLoading);
+  // console.log(data.categories);
+  // console.log(isLoading);
 
   return (
     <div className="App">
@@ -36,14 +38,20 @@ function App() {
           <header>
             <Header image={logo} />
           </header>
-          <main className="main">
-            <Restaurant
-              image={data.restaurant.picture}
-              name={data.restaurant.name}
-              description={data.restaurant.description}
-            />
-
-            <section></section>
+          <main>
+            <section className="main">
+              <Restaurant
+                image={data.restaurant.picture}
+                name={data.restaurant.name}
+                description={data.restaurant.description}
+              />
+            </section>
+            <section className="menu">
+              <div className="menuSections">
+                <Menu categories={data.categories} />
+                <img className="panier" src={panier} alt="Panier"></img>
+              </div>
+            </section>
           </main>
         </div>
       )}
