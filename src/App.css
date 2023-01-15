@@ -7,18 +7,25 @@ h1 {
   font-size: 32px;
   font-weight: bold;
 }
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+}
 
+h3 {
+  font-size: 18px;
+}
 /* HEADER */
 
 header {
   border-bottom: 1px lightgray solid;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 header > div {
   display: flex;
-
   width: 1200px;
 }
 header img {
@@ -59,19 +66,89 @@ header img {
 /* MENU */
 
 .menu {
-  background-color: lightgrey;
+  background-color: #f3f5f5;
   display: flex;
   justify-content: center;
 }
 
 .menuSections {
   width: 1200px;
-  gap: 50px;
-  margin: 50px auto;
+  gap: 30px;
   display: flex;
   justify-content: space-between;
 }
 
 .panier {
+  margin-top: 50px;
+  height: 200px;
   width: 350px;
+}
+
+.mealsGrid {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mealBox {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px;
+  height: 160px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.mealBox:hover {
+  box-shadow: 5px 5px 25px 5px rgb(230, 230, 230);
+}
+.mealBoxDetailsSplit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mealDetails {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.mealBox img {
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.mealBox p {
+  color: grey;
+  font-size: 14px;
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 2.5em;
+  line-height: 1.2em;
+}
+
+.priceAndPopular {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.mealBoxPrice {
+  color: grey;
+  font-size: 16px;
+}
+
+.popular {
+  color: #ff8000;
+  font-size: 12px;
+  font-weight: bold;
 }

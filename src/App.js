@@ -26,9 +26,6 @@ function App() {
     fetchData();
   }, []);
 
-  // console.log(data.categories);
-  // console.log(isLoading);
-
   return (
     <div className="App">
       {isLoading ? (
@@ -36,7 +33,9 @@ function App() {
       ) : (
         <div>
           <header>
-            <Header image={logo} />
+            <div>
+              <Header image={logo} />
+            </div>
           </header>
           <main>
             <section className="main">
@@ -48,7 +47,7 @@ function App() {
             </section>
             <section className="menu">
               <div className="menuSections">
-                <Menu categories={data.categories} />
+                <Menu catArray={data.categories} />
                 <img className="panier" src={panier} alt="Panier"></img>
               </div>
             </section>
