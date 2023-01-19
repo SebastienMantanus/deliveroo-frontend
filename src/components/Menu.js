@@ -1,4 +1,4 @@
-const Menu = ({ catArray }) => {
+const Menu = ({ catArray }, { basket }, { setBasket }) => {
   //   console.log(catArray);
 
   return (

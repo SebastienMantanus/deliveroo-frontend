@@ -10,6 +10,7 @@ import Menu from "./components/Menu";
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +48,11 @@ function App() {
             </section>
             <section className="menu">
               <div className="menuSections">
-                <Menu catArray={data.categories} />
+                <Menu
+                  catArray={data.categories}
+                  basket={basket}
+                  setBasket={setBasket}
+                />
                 <img className="panier" src={panier} alt="Panier"></img>
               </div>
             </section>
