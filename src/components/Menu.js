@@ -1,4 +1,5 @@
-const Menu = ({ catArray }, { basket }, { setBasket }) => {
+const Menu = (props) => {
+  const { catArray, basket, setBasket } = props;
   //   console.log(catArray);
 
   return (
@@ -11,7 +12,29 @@ const Menu = ({ catArray }, { basket }, { setBasket }) => {
             <div className="mealsGrid">
               {element.meals.map((meal, index) => {
                 return (
-                  <div key={meal.id} className="mealBox">
+                  <div
+                    className="mealBox"
+                    onClick={() => {
+                      for (let i = 0; i < basket.length; i++) {
+                        if (basket[i].item === meal.title) {
+                          basket[i].quantity = basket[i].quantity + 1;
+                          basket[i].total =
+                            basket[i].price * basket[i].quantity;
+                        } else {
+                          const newBasket = [...basket];
+                          newBasket.push({
+                            item: meal.title,
+                            price: meal.price,
+                            quantity: 1,
+                            total: meal.price,
+                          });
+                          setBasket(newBasket);
+                        }
+                      }
+
+                      console.log(basket);
+                    }}
+                  >
                     <div className="mealBoxDetailsSplit">
                       <div className="mealDetails">
                         <h3>{meal.title}</h3>
