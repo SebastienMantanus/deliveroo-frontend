@@ -17,9 +17,15 @@ const Menu = (props) => {
                     onClick={() => {
                       for (let i = 0; i < basket.length; i++) {
                         if (basket[i].item === meal.title) {
-                          basket[i].quantity = basket[i].quantity + 1;
-                          basket[i].total =
-                            basket[i].price * basket[i].quantity;
+                          const newBasket = [...basket];
+                          newBasket[i].quantity = newBasket[i].quantity + 1;
+                          newBasket[i].total =
+                            newBasket[i].price * newBasket[i].quantity;
+                          setBasket(newBasket);
+
+                          // basket[i].quantity = basket[i].quantity + 1;
+                          // basket[i].total =
+                          //   basket[i].price * basket[i].quantity;
                         } else {
                           const newBasket = [...basket];
                           newBasket.push({
