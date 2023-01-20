@@ -6,6 +6,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Restaurant from "./components/Restaurant";
 import Menu from "./components/Menu";
+import Basket from "./components/Basket";
 
 function App() {
   const [data, setData] = useState(null);
@@ -53,7 +54,7 @@ function App() {
                   basket={basket}
                   setBasket={setBasket}
                 />
-                <img className="panier" src={panier} alt="Panier"></img>
+                <Basket basket={basket} setBasket={setBasket} panier={panier} />
               </div>
             </section>
           </main>

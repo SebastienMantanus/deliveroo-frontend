@@ -73,9 +73,9 @@ header img {
 
 .menuSections {
   width: 1200px;
-  gap: 30px;
+  /* gap: 30px; */
   display: flex;
-  justify-content: space-between;
+  /* justify-content: left; */
 }
 
 .panier {
@@ -83,13 +83,14 @@ header img {
   top: 25px;
   margin-top: 50px;
   height: 200px;
-  width: 350px;
+  width: 130vmax;
+  background-color: white;
 }
 
 .mealsGrid {
   margin-top: 25px;
   display: flex;
-  justify-content: space-between;
+  width: calc(100%-10px);
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
