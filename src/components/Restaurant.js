@@ -5,7 +5,7 @@ const Restaurant = ({ image, name, description }) => {
         <h1>{name}</h1>
         <p>{description}</p>
       </div>
-      <img src={image} alt="Restaurant Image"></img>
+      <img src={image} alt="Restaurant"></img>
     </section>
   );
 };

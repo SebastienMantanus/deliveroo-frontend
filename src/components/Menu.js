@@ -6,36 +6,44 @@ const Menu = (props) => {
     <div>
       {catArray.map((element, index) => {
         return (
-          <>
+          <div key={index}>
             {element.meals.length > 0 && <h2 key={index}>{element.name}</h2>}
 
             <div className="mealsGrid">
               {element.meals.map((meal, index) => {
                 return (
                   <div
+                    key={index}
                     className="mealBox"
                     onClick={() => {
-                      for (let i = 0; i < basket.length; i++) {
-                        if (basket[i].item === meal.title) {
-                          const newBasket = [...basket];
-                          newBasket[i].quantity = newBasket[i].quantity + 1;
-                          newBasket[i].total =
-                            newBasket[i].price * newBasket[i].quantity;
-                          setBasket(newBasket);
-
-                          // basket[i].quantity = basket[i].quantity + 1;
-                          // basket[i].total =
-                          //   basket[i].price * basket[i].quantity;
-                        } else {
-                          const newBasket = [...basket];
-                          newBasket.push({
-                            item: meal.title,
-                            price: meal.price,
-                            quantity: 1,
-                            total: meal.price,
-                          });
-                          setBasket(newBasket);
+                      if (basket.length > 0) {
+                        for (let i = 0; i < basket.length; i++) {
+                          if (basket[i].item === meal.title) {
+                            const newBasket = [...basket];
+                            newBasket[i].quantity = newBasket[i].quantity + 1;
+                            newBasket[i].total =
+                              newBasket[i].price * newBasket[i].quantity;
+                            setBasket(newBasket);
+                          } else {
+                            const newBasket = [...basket];
+                            newBasket.push({
+                              item: meal.title,
+                              price: meal.price,
+                              quantity: 1,
+                              total: meal.price,
+                            });
+                            setBasket(newBasket);
+                          }
                         }
+                      } else {
+                        const newBasket = [...basket];
+                        newBasket.push({
+                          item: meal.title,
+                          price: meal.price,
+                          quantity: 1,
+                          total: meal.price,
+                        });
+                        setBasket(newBasket);
                       }
 
                       console.log(basket);
@@ -58,7 +66,7 @@ const Menu = (props) => {
                 );
               })}
             </div>
-          </>
+          </div>
         );
       })}
     </div>

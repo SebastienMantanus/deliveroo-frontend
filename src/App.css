@@ -79,6 +79,8 @@ header img {
 }
 
 .panier {
+  position: sticky;
+  top: 25px;
   margin-top: 50px;
   height: 200px;
   width: 350px;

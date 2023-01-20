@@ -10,9 +10,7 @@ import Menu from "./components/Menu";
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [basket, setBasket] = useState([
-    { item: "", price: "", quantity: "", total: 0 },
-  ]);
+  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
